@@ -39,6 +39,10 @@
         var possibleUserPicks = document.getElementsByClassName('user-choice');
         console.log(possibleUserPicks);
 
+        possibleUserPicks[0].addEventListener('click', function(){
+            console.log("Hai cliccato", this);
+        });
+        
         function generateCpuPick(){
             cpuPick = pickOptions[Math.floor(Math.random() * pickOptions.length)];
         }
