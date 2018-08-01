@@ -5,9 +5,23 @@ var score = {
 var userPick;
 var cpuPick;
 
-var pickOptions = ["sasso", "carta", "forbice"];
+var pickOptions = [
+    {
+        name: "sasso",
+        image: "assets/sasso.png"
+    },
+    {
+        name: "carta",
+        image: "assets/carta.png"
+    },
+    {
+        name: "forbice",
+        image: "assets/forbice.png"
+    }
+];
 
 var possibleUserPicks = document.getElementsByClassName('user-choice');
+
 for(var i=0; i<possibleUserPicks.length; i++){
     possibleUserPicks[i].addEventListener('click', onUserPick);
 }
@@ -20,7 +34,9 @@ function onUserPick(){
 
 function generateCpuPick(){
     cpuPick = pickOptions[Math.floor(Math.random() * pickOptions.length)];
-    console.log("La tua del computer e': ", cpuPick);
+    console.log("La tua del computer e': ", cpuPick.name);
+
+    document.getElementById("computer-choice").innerHTML = "Il computer ha scelto: " + cpuPick.name;
     checkResult();
 }
 
