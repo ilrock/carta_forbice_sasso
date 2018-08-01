@@ -50,12 +50,14 @@ function generateCpuPick(){
 
         if(timesRun == 20){
             clearInterval(interval);
+            var finalImageHtml = "<img src='" + cpuPick.image + "' height='100' width='100'>"
+            var finalTextHtml = "<h3> Il Computer ha scelto:" + cpuPick.name + "</h3>";
+
+            document.getElementById("computer-choice").innerHTML = finalImageHtml + finalTextHtml;
+            document.getElementById("result").innerHTML = checkResult();
         }
         
     }, 150);
-
-    
-    document.getElementById("result").innerHTML = checkResult();
 }
 
 function checkResult(){
