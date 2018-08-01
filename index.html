@@ -32,7 +32,15 @@
         var cpuScore = 0;
 
         var userPick = "sasso";
-        var cpuPick = "forbice";
+        var cpuPick;
+
+        var pickOptions = ["sasso", "carta", "forbice"];
+
+        function generateCpuPick(){
+            console.log(pickOptions[0]);
+            console.log(pickOptions[1]);
+            console.log(pickOptions[2]);
+        }
 
         function checkResult(){
             if(userPick == cpuPick){
