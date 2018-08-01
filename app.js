@@ -35,11 +35,24 @@ function generateCpuPick(){
     cpuPick = pickOptions[Math.floor(Math.random() * pickOptions.length)];
 
     var index = 0;
+    var timesRun = 0;
     var interval = setInterval(function(){
+        timesRun ++;
+
         var tmpImageHtml = "<img src='" + pickOptions[index].image + "' height='100' width='100'>"
         document.getElementById("computer-choice").innerHTML = tmpImageHtml;
-        index++;
-    }, 200);
+
+        if(index == pickOptions.length -1){
+            index = 0;
+        } else {
+            index++;
+        }
+
+        if(timesRun == 20){
+            clearInterval(interval);
+        }
+        
+    }, 150);
 
     
     document.getElementById("result").innerHTML = checkResult();
