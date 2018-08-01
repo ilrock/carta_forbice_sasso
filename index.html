@@ -31,22 +31,16 @@
         var userScore = 0;
         var cpuScore = 0;
 
-        var userPick = "sasso";
+        var userPick;
         var cpuPick;
 
         var pickOptions = ["sasso", "carta", "forbice"];
 
+        var possibleUserPicks = document.getElementsByClassName('user-choice');
+        console.log(possibleUserPicks);
+
         function generateCpuPick(){
-            console.log(pickOptions[0]);
-            console.log(pickOptions[1]);
-            console.log(pickOptions[2]);
-
-            console.log(Math.random() * 3);
-            console.log(Math.random() * pickOptions.length);
-
-            console.log(Math.floor(Math.random() * pickOptions.length));
-
-            cpuPick = pickOptions[Math.floor(Math.random() * pickOptions.length)]
+            cpuPick = pickOptions[Math.floor(Math.random() * pickOptions.length)];
         }
 
         generateCpuPick();
