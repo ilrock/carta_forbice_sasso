@@ -37,29 +37,29 @@ function generateCpuPick(){
     console.log("La tua del computer e': ", cpuPick.name);
 
     document.getElementById("computer-choice").innerHTML = "Il computer ha scelto: " + cpuPick.name;
-    checkResult();
+    document.getElementById("result").innerHTML = checkResult();
 }
 
 function checkResult(){
-    if(userPick == cpuPick){
-    console.log("Hai pareggiato contro il computer");
+    if(userPick == cpuPick.name){
+    return ("Hai pareggiato contro il computer");
     } else if(userPick == "sasso"){
-        if(cpuPick == "carta"){
-            console.log("Hai perso");
+        if(cpuPick.name == "carta"){
+            return("Hai perso");
         } else {
-            console.log("Hai vinto");
+            return("Hai vinto");
         }
-    } else if(userPick == "carta"){
-        if(cpuPick == "forbice"){
-            console.log("Hai perso");
+    } else if(userPick.name == "carta"){
+        if(cpuPick.name == "forbice"){
+            return("Hai perso");
         } else{
-            console.log("Hai vinto");
+            return("Hai vinto");
         }
     } else {
-        if (cpuPick == "sasso"){
-            console.log("Hai perso");
+        if (cpuPick.name == "sasso"){
+            return("Hai perso");
         } else {
-            console.log("Hai vinto");
+            return("Hai vinto");
         }
     }
 }
