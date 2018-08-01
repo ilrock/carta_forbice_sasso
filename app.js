@@ -55,37 +55,46 @@ function generateCpuPick(){
 
             document.getElementById("computer-choice").innerHTML = finalImageHtml + finalTextHtml;
             document.getElementById("result").innerHTML = checkResult();
+
+            document.getElementById("player-score").innerHTML = score.user;
+            document.getElementById("cpu-score").innerHTML = score.cpu;
         }
         
     }, 150);
 }
 
 function checkResult(){
-    if(userPick == cpuPick.name){
-        return ("Hai pareggiato contro il computer");
+    if(cpuPick.name == userPick){
+        return "Avete pareggiato"
     }
-    
+
     if(userPick == "sasso"){
-        if(cpuPick.name == "carta"){
-            return("Hai perso");
+        if (cpuPick.name == "forbice"){
+            score.user++;
+            return "Hai vinto";
         } else {
-            return("Hai vinto");
-        }
-    }
-    
-    if(userPick.name == "carta"){
-        if(cpuPick.name == "forbice"){
-            return("Hai perso");
-        } else{
-            return("Hai vinto");
+            score.cpu ++;
+            return "Hai perso";
         }
     }
 
-    if (userPick == "forbice"){
-        if (cpuPick.name == "sasso"){
-            return("Hai perso");
+    if(userPick == "carta"){
+        if (cpuPick.name == "forbice"){
+            score.cpu ++;
+            return "Hai perso";
         } else {
-            return("Hai vinto");
+            score.user++;
+            return "Hai vinto";
         }
     }
+
+    if(userPick == "forbice"){
+        if (cpuPick.name == "sasso"){
+            score.cpu ++;
+            return "Hai perso";
+        } else {
+            score.user++;
+            return "Hai vinto";
+        }
+    } 
 }
