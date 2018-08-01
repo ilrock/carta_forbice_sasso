@@ -8,21 +8,20 @@ var cpuPick;
 var pickOptions = ["sasso", "carta", "forbice"];
 
 var possibleUserPicks = document.getElementsByClassName('user-choice');
-console.log(possibleUserPicks);
-
 for(var i=0; i<possibleUserPicks.length; i++){
-    console.log("i = ", i);
     possibleUserPicks[i].addEventListener('click', onUserPick);
 }
 
 function onUserPick(){
-    console.log("Hai cliccato", this);
     userPick = this.dataset.name;
     console.log("La tua scelta e': ", userPick);
+    generateCpuPick();
 }
 
 function generateCpuPick(){
     cpuPick = pickOptions[Math.floor(Math.random() * pickOptions.length)];
+    console.log("La tua del computer e': ", cpuPick);
+    checkResult();
 }
 
 function checkResult(){
