@@ -32,11 +32,19 @@
         var cpuScore = 0;
 
         var userPick = "sasso";
-        var cpuPick = "carta";
+        var cpuPick = "forbice";
 
         if(userPick == cpuPick){
             console.log("Hai pareggiato contro il computer");
+        } else if(userPick == "sasso"){
+            if(cpuPick == "carta"){
+                console.log("Hai perso");
+            } else {
+                console.log("Hai vinto");
+            }
         }
+
+
     </script>
 </body>
 </html>
