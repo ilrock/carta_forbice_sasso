@@ -27,6 +27,7 @@ for(var i=0; i<possibleUserPicks.length; i++){
 }
 
 function onUserPick(){
+    document.getElementById("result").innerHTML = "";
     userPick = this.dataset.name;
     generateCpuPick();
 }
