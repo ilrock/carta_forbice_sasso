@@ -42,20 +42,26 @@ function generateCpuPick(){
 
 function checkResult(){
     if(userPick == cpuPick.name){
-    return ("Hai pareggiato contro il computer");
-    } else if(userPick == "sasso"){
+        return ("Hai pareggiato contro il computer");
+    }
+    
+    if(userPick == "sasso"){
         if(cpuPick.name == "carta"){
             return("Hai perso");
         } else {
             return("Hai vinto");
         }
-    } else if(userPick.name == "carta"){
+    }
+    
+    if(userPick.name == "carta"){
         if(cpuPick.name == "forbice"){
             return("Hai perso");
         } else{
             return("Hai vinto");
         }
-    } else {
+    }
+    
+    if (userPick == "forbice"){
         if (cpuPick.name == "sasso"){
             return("Hai perso");
         } else {
