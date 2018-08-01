@@ -34,28 +34,36 @@
         var userPick = "sasso";
         var cpuPick = "forbice";
 
-        if(userPick == cpuPick){
+        function checkResult(){
+            if(userPick == cpuPick){
             console.log("Hai pareggiato contro il computer");
-        } else if(userPick == "sasso"){
-            if(cpuPick == "carta"){
-                console.log("Hai perso");
+            } else if(userPick == "sasso"){
+                if(cpuPick == "carta"){
+                    console.log("Hai perso");
+                } else {
+                    console.log("Hai vinto");
+                }
+            } else if(userPick == "carta"){
+                if(cpuPick == "forbice"){
+                    console.log("Hai perso");
+                } else{
+                    console.log("Hai vinto");
+                }
             } else {
-                console.log("Hai vinto");
-            }
-        } else if(userPick == "carta"){
-            if(cpuPick == "forbice"){
-                console.log("Hai perso");
-            } else{
-                console.log("Hai vinto");
-            }
-        } else {
-            if (cpuPick == "sasso"){
-                console.log("Hai perso");
-            } else {
-                console.log("Hai vinto");
+                if (cpuPick == "sasso"){
+                    console.log("Hai perso");
+                } else {
+                    console.log("Hai vinto");
+                }
             }
         }
 
+        checkResult();
+
+        userPick = "carta";
+        cpuPick = "sasso";
+
+        checkResult();
 
     </script>
 </body>
