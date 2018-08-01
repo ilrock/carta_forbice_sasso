@@ -36,8 +36,9 @@ function generateCpuPick(){
 
     var index = 0;
     var interval = setInterval(function(){
-        var tmpImageHtml = "<img src='" + pickOptions[i].image + "' height='100' width='100'>"
+        var tmpImageHtml = "<img src='" + pickOptions[index].image + "' height='100' width='100'>"
         document.getElementById("computer-choice").innerHTML = tmpImageHtml;
+        index++;
     }, 200);
 
     
