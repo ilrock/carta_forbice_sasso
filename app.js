@@ -1,6 +1,7 @@
-var userScore = 0;
-var cpuScore = 0;
-
+var score = {
+    user: 0,
+    cpu: 0
+}
 var userPick;
 var cpuPick;
 
@@ -13,7 +14,7 @@ for(var i=0; i<possibleUserPicks.length; i++){
     console.log("i = ", i);
     possibleUserPicks[i].addEventListener('click', function(){
         console.log("Hai cliccato", this);
-        
+        console.log("La tua scelta e': ", );
     });
 }
 
